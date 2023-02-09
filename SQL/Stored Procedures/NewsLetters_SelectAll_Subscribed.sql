@@ -1,3 +1,16 @@
+-- =============================================
+    -- Author: David Dickson
+    -- Create date: MM/DD/YEAR
+    -- Description: Delete for dbo.Newsletter_Delete_By_Id given the Id of Newsletters
+    -- Code Reviewer: Redacted 
+
+    -- MODIFIED BY: Author
+    -- MODIFIED DATE: MM/DD/YEAR
+    -- Code Reviewer:
+    -- Note:
+-- ==============================================
+
+
 ALTER proc [dbo].[NewsLetters_SelectAll_Subscribed]
     		@PageIndex int
     		,@PageSize int
