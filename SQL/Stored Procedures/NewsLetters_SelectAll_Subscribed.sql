@@ -15,7 +15,7 @@ ALTER proc [dbo].[NewsLetters_SelectAll_Subscribed]
     		@PageIndex int
     		,@PageSize int
 						
-as
+AS
 
 /*-----------------TEST CODE-------------------
 
