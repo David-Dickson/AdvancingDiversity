@@ -11,7 +11,7 @@
 -- ==============================================
 
 ALTER   PROC [dbo].[Newsletters_Delete_By_Id]
-					@Id int
+		@Id int
 
 
 AS
@@ -32,8 +32,8 @@ AS
 BEGIN
 
 
-		DELETE FROM [dbo].[Newsletters]
-		    WHERE Id = @Id
+	DELETE FROM [dbo].[Newsletters]
+		WHERE Id = @Id
 
 
 END
