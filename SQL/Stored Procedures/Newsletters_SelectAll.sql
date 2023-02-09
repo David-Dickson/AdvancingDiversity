@@ -11,8 +11,8 @@
 -- ==============================================
 
 ALTER   PROC [dbo].[Newsletters_SelectAll]
-			@PageIndex int
-		    ,@PageSize int
+		@PageIndex int
+		,@PageSize int
 
 
 AS
@@ -20,21 +20,21 @@ AS
 
 /*------ TEST CODE ------
 	
-		DECLARE @PageIndex int = 0
-				,@PageSize int = 10
+	DECLARE @PageIndex int = 0
+		,@PageSize int = 10
 
-		EXECUTE dbo.Newsletters_SelectAll
-				@PageIndex
-				,@PageSize
+	EXECUTE dbo.Newsletters_SelectAll
+		@PageIndex
+		,@PageSize
 
         SELECT * 
-			FROM dbo.Newsletters
+		FROM dbo.Newsletters
 			
-		SELECT * 
-			FROM dbo.NewsletterTemplates
+	SELECT * 
+		FROM dbo.NewsletterTemplates
 
-		SELECT * 
-			FROM dbo.Users
+	SELECT * 
+		FROM dbo.Users
 
 
 ------ END  TEST CODE -------
@@ -42,21 +42,21 @@ AS
 
 
 BEGIN
-		DECLARE @offset int = @PageIndex * @PageSize
 
+	DECLARE @offset int = @PageIndex * @PageSize
 		
 
-		SELECT [Id]
-			  ,TemplateId
-			  ,[Name]
-			  ,[CoverPhoto]
-			  ,[DateToPublish]
-			  ,[DateToExpire]
-			  ,[DateCreated]
-			  ,[DateModified]
-			  ,CreatedBy
-			  ,TotalCount = COUNT(1) OVER()
-          FROM dbo.Newsletters
+	SELECT [Id]
+		  ,TemplateId
+		  ,[Name]
+		  ,[CoverPhoto]
+		  ,[DateToPublish]
+		  ,[DateToExpire]
+		  ,[DateCreated]
+		  ,[DateModified]
+		  ,CreatedBy
+		  ,TotalCount = COUNT(1) OVER()
+	FROM dbo.Newsletters
 
 		  ORDER BY Id DESC
 		  OFFSET @offset ROWS
