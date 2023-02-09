@@ -11,41 +11,41 @@
 -- ==============================================
 
 ALTER PROC [dbo].[NewsletterSubscriptions_Insert]
-            @Email nvarchar(255)
-            ,@IsSubscribed bit
-            ,@Id int OUTPUT
+		@Email nvarchar(255)
+                ,@IsSubscribed bit
+                ,@Id int OUTPUT
 				
 AS
 
 /*---------------TEST CODE--------------
 		
 
-		SELECT * 
-		From dbo.NewsletterSubscriptions
+	SELECT * 
+	FROM dbo.NewsletterSubscriptions
 
-		DECLARE @Id int = 0
-		DECLARE @Email nvarchar(255) = 'Test32@gmail.com'
-				     ,@IsSubscribed bit = 1
+	DECLARE @Id int = 0
+	DECLARE @Email nvarchar(255) = 'Test32@gmail.com'
+		,@IsSubscribed bit = 1
 		
-		EXECUTE dbo.NewsletterSubscriptions_Insert 
-            @Email
-            ,@IsSubscribed
-            ,@Id OUTPUT
+	EXECUTE dbo.NewsletterSubscriptions_Insert 
+		@Email
+		,@IsSubscribed
+		,@Id OUTPUT
 													
-		SELECT * 
-		FROM dbo.NewsletterSubscriptions
+	SELECT * 
+	FROM dbo.NewsletterSubscriptions
 	
 ---------------------------------------*/
 
 BEGIN
 
-			INSERT INTO dbo.NewsletterSubscriptions
+	INSERT INTO dbo.NewsletterSubscriptions
             ([Email]
             ,[IsSubscribed])
-      VALUES
+	VALUES
             (@Email
             ,@IsSubscribed)
 		
-			SET @Id = SCOPE_IDENTITY()
+	SET @Id = SCOPE_IDENTITY()
 			
 END
