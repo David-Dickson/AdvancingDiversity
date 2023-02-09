@@ -11,7 +11,7 @@
 -- ==============================================
 
 ALTER   PROC [dbo].[Newsletters_Insert]
-		 @TemplateId int
+	 	@TemplateId int
 		,@Name nvarchar(100)
 		,@CoverPhoto nvarchar(255)
 		,@DateToPublish datetime2(7)
