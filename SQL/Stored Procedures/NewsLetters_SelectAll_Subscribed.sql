@@ -11,7 +11,7 @@
 -- ==============================================
 
 
-ALTER proc [dbo].[NewsLetters_SelectAll_Subscribed]
+ALTER PROC [dbo].[NewsLetters_SelectAll_Subscribed]
     		@PageIndex int
     		,@PageSize int
 						
