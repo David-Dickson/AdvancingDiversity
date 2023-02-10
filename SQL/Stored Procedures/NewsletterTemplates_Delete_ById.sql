@@ -2,7 +2,7 @@
 -- Author:	David Dickson
 -- Create date: MM/DD/YEAR
 -- Description:	Delete_ById for Newsletter Template
--- Code Reviewer: REdacted
+-- Code Reviewer: Redacted
 
 
 -- MODIFIED BY: author
