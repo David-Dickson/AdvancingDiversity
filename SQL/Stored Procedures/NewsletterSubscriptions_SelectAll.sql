@@ -1,7 +1,7 @@
 --===========================================================================================
 -- Author: David Dickson
 -- Create date: MM/DD/YEAR
--- Description: [dbo].[NewsletterSubscriptions_SelectAll] for dbo.NewsletterSubscriptions
+-- Description: [dbo].[NewsletterSubscriptions_SelectAll] for [dbo].[NewsletterSubscriptions]
 -- Code Reviewer: Redacted
 
 -- Modified by: author
@@ -22,7 +22,7 @@ AS
 	DECLARE @PageIndex int = 0
 		,@PageSize int = 7
 
-	EXECUTE dbo.NewsletterSubscriptions_SelectAll
+	EXECUTE [dbo].[NewsletterSubscriptions_SelectAll]
 		@PageIndex
 		,@PageSize
 
@@ -38,6 +38,7 @@ BEGIN
 		,[DateCreated]
 		,[DateModified] 
 		,TotalCount = COUNT(1) OVER()
+		
 	FROM [dbo].[NewsletterSubscriptions]
 	ORDER By Id
 	
