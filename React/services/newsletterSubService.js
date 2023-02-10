@@ -4,7 +4,7 @@ import debug from 'hidden-debug';
 
 const _logger = debug.extend('newsletterSubService');
 
-const newsletterSubServiceAPI = {
+const newsletterSubService = {
         endpoint: `${API_HOST_PREFIX}/api/newslettersubscriptions`,
 };
 
@@ -13,7 +13,7 @@ const addSub = (payload) => {
         _logger('add newsletterSub firing', payload)
         const config = {
                 method: 'POST',
-                url: newsletterSubServiceAPI.endpoint,
+                url: newsletterSubService.endpoint,
                 data: payload,
                 crossdomain: true,
                 headers: { 'Content-Type': 'application/json' },
@@ -26,7 +26,7 @@ const updateSub = (payload) => {
         _logger('update sub')
         const config = {
                 method: 'PUT',
-                url: newsletterSubServiceAPI.subEndpoint,
+                url: newsletterSubService.subEndpoint,
                 data: payload,
                 crossdomain: true,
                 headers: { 'Content-Type': 'application/json' },
@@ -38,7 +38,7 @@ const newsletterSearch = (pageIndex, pageSize, query) => {
         _logger('searching');
         const config = {
                 method: 'GET',
-                url: newsletterSubServiceAPI.endpoint + `/query/?query=${query}&pageIndex=${pageIndex}&pageSize=${pageSize}`,
+                url: newsletterSubService.endpoint + `/query/?query=${query}&pageIndex=${pageIndex}&pageSize=${pageSize}`,
                 crossdomain: true,
                 headers: { 'Content-Type': 'application/json' },
         }
@@ -48,7 +48,7 @@ const newsletterSearch = (pageIndex, pageSize, query) => {
 const getAllSubsPaginated = (pageIndex, pageSize) => {
         const config = {
                 method: 'GET',
-                url: `${newsletterSubServiceAPI.endpoint}/paginate?pageIndex=${pageIndex}&pageSize=${pageSize}`,
+                url: `${newsletterSubService.endpoint}/paginate?pageIndex=${pageIndex}&pageSize=${pageSize}`,
                 crossdomain: true,
                 headers: { 'Content-Type': 'application/json' },
         };
@@ -60,7 +60,7 @@ const getBySubscribedList = (payload) => {
         _logger('by subscribed');
         const config = {
                 method: 'GET',
-                url: `${newsletterSubServiceAPI.endpoint}/ `,
+                url: `${newsletterSubService.endpoint}/ `,
                 data: payload,
                 crossdomain: true,
                 headers: { 'Content-Type': 'application/json' },
