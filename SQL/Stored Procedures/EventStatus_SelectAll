@@ -10,23 +10,26 @@
 -- Note:
 -- =============================================
 
+
+ALTER 	PROC [dbo].[EventStatus_SelectAll]
+
+
 AS
 
 /* -----TEST CODE-----
 
 
-EXECUTE [dbo].[EventStatus_SelectAll]
+	EXECUTE [dbo].[EventStatus_SelectAll]
 					
 
 */-----END TEST CODE-----
 
 BEGIN
 	
-		SELECT [Id]
-			  ,[Name]
-		  FROM [dbo].[EventStatus]
-
-
+	SELECT [Id]
+		,[Name]
+		
+	FROM [dbo].[EventStatus]
 
 
 END
