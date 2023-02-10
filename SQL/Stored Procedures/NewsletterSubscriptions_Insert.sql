@@ -18,7 +18,6 @@ ALTER PROC [dbo].[NewsletterSubscriptions_Insert]
 AS
 
 /*---------------TEST CODE--------------
-		
 
 	SELECT * 
 		FROM [dbo].[NewsletterSubscriptions]
