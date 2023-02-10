@@ -1,7 +1,7 @@
 -- =============================================
 -- Author: David Dickson
--- Create date: 6/27/2022
--- Description: [Events_Search] for dbo.Events
+-- Create date: MM/DD/YEAR
+-- Description: [Events_Search] for [dbo].[Events]
 -- Code Reviewer: Redacted
 
 -- MODIFIED BY: author
