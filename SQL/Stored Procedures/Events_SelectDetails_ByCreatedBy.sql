@@ -1,35 +1,38 @@
 -- =============================================
--- Author: Claudia Diaz
--- Create date: 5/22/2022
--- Description: [Events_SelectDetails_ByCreatedBy] for dbo.Events
--- Code Reviewer: Aeron Inouye
+-- Author: David Dickson
+-- Create date: MM/DD/YEAR
+-- Description: [Events_SelectDetails_ByCreatedBy] for [dbo].[Events]
+-- Code Reviewer: Redacted
+
 -- MODIFIED BY: author
--- MODIFIED DATE: M/DD/YEAR
+-- MODIFIED DATE: MM/DD/YEAR
 -- Code Reviewer:
 -- Note:
 -- =============================================
 
 
 
-ALTER PROC [dbo].[Events_SelectDetails_ByCreatedBy] 
-                  @CreatedBy int
-									,@PageIndex int
-									,@PageSize int
-					
+ALTER 	PROC [dbo].[Events_SelectDetails_ByCreatedBy] 
+		@CreatedBy int
+		,@PageIndex int
+		,@PageSize int
+
 
 AS
+
+
 /*
 	
 	DECLARE @CreatedBy int = 2
-			,@PageIndex int = 0
-			 ,@PageSize int = 3
+		,@PageIndex int = 0
+		,@PageSize int = 3
 
 		
 
 	EXECUTE [dbo].[Events_SelectDetails_ByCreatedBy] 
-                  @CreatedBy
-									,@PageIndex 
-									,@PageSize 
+		@CreatedBy
+		,@PageIndex 
+		,@PageSize 
 								
 
 */
@@ -75,20 +78,20 @@ BEGIN
 		,e.CreatedBy
 		,TotalCount = COUNT(1) OVER()
 		
-		FROM [dbo].[Events] AS e INNER JOIN [dbo].[EventTypes] AS et
-		ON e.EventTypeId = et.Id
+	FROM [dbo].[Events] AS e INNER JOIN [dbo].[EventTypes] AS et
+	ON e.EventTypeId = et.Id
 		INNER JOIN [dbo].[EventStatus] AS es
-		ON e.EventStatusId = es.Id
+	ON e.EventStatusId = es.Id
 		INNER JOIN [dbo].[Venues] AS v
-		ON v.Id = e.VenueId
+	ON v.Id = e.VenueId
 		INNER JOIN [dbo].[Locations] AS l
-		ON v.LocationId = l.Id
+	ON v.LocationId = l.Id
 		INNER JOIN [dbo].[LocationTypes] AS lt
-		ON lt.Id = l.LocationTypeId
+	ON lt.Id = l.LocationTypeId
 		INNER JOIN dbo.States AS s
-		ON s.Id = l.StateId
+	ON s.Id = l.StateId
 
-		WHERE e.CreatedBy = @CreatedBy
+	WHERE e.CreatedBy = @CreatedBy
 
 		Order by e.Id
 		OFFSET @offSet Rows
