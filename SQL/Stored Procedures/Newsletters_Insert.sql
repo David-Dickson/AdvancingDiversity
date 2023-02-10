@@ -32,7 +32,7 @@ AS
 		,@DateToExpire datetime2(7) = '2022-10-23'
 		,@CreatedBy int = 41
 
-	EXECUTE dbo.Newsletters_Insert 					 
+	EXECUTE [dbo].[Newsletters_Insert] 					 
 		 @TemplateId
 		,@Name
 		,@CoverPhoto
@@ -42,13 +42,13 @@ AS
 		,@Id OUTPUT 
 
 	SELECT * 
-	FROM dbo.Newsletters
+		FROM dbo.Newsletters
 
 	SELECT * 
-	FROM dbo.NewsletterTemplates
+		FROM dbo.NewsletterTemplates
 
 	SELECT * 
-	FROM dbo.Users
+		FROM dbo.Users
 
 			
 ------ END TEST CODE ------
