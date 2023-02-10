@@ -1,0 +1,32 @@
+-- =============================================
+-- Author: David Dickson
+-- Create date: MM/DD/YEAR
+-- Description: SelectAll for [dbo].[EventStatus] Lookup Table
+-- Code Reviewer: Redacted
+
+-- MODIFIED BY: Author
+-- MODIFIED DATE: MM/DD/YEAR
+-- Code Reviewer:
+-- Note:
+-- =============================================
+
+AS
+
+/* -----TEST CODE-----
+
+
+EXECUTE [dbo].[EventStatus_SelectAll]
+					
+
+*/-----END TEST CODE-----
+
+BEGIN
+	
+		SELECT [Id]
+			  ,[Name]
+		  FROM [dbo].[EventStatus]
+
+
+
+
+END
