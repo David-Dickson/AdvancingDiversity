@@ -1,7 +1,7 @@
 -- =============================================
     -- Author: David Dickson
     -- Create date: MM/DD/YEAR
-    -- Description: Insert for dbo.NewsletterSubscriptions
+    -- Description: Insert for [dbo].[NewsletterSubscriptions]
     -- Code Reviewer: Redacted 
 
     -- MODIFIED BY: Author
