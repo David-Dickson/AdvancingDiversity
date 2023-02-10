@@ -1,3 +1,16 @@
+-- =============================================
+-- Author: David Dickson
+-- Create date: 6/10/2022
+-- Description: NewsletterSubscriptions Select By Search
+-- Code Reviewer: Redacted
+
+-- MODIFIED BY: Author
+-- MODIFIED DATE: MM/DD/YYYY
+-- Code Reviewer:
+-- Note:
+-- =============================================
+
+
 ALTER PROC [dbo].[NewsletterSubscriptions_SelectBy_Search]
 		@PageIndex int
 		,@PageSize int
@@ -32,6 +45,7 @@ BEGIN
 		,[DateModified]
 		,TotalCount = COUNT(1) OVER()
 	FROM [dbo].[NewsletterSubscriptions]
+	
 	WHERE (Email LIKE '%' + @Query + '%')
 	ORDER BY Id
 	
