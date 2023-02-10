@@ -2,6 +2,7 @@ import React, { useState, useEffect, useCallback } from 'react';
 import { Formik, Form, Field } from 'formik';
 import TemplateCard from './TemplateCard';
 import * as newsletterTemplatesService from '../../services/newsletterTemplatesService';
+import debug from 'debugger';
 import { Link } from 'react-router-dom';
 import TemplatesForm from './TemplatesForm';
 import Pagination from 'rc-pagination';
@@ -10,6 +11,7 @@ import 'rc-pagination/assets/index.css';
 import 'toastr/build/toastr.css';
 
 function NewsLetterTemplate() {
+    const _logger = debug.extend('NewsletterTemplates');
 
     const [templateData, setTemplateData] = useState({
         index: 0,
