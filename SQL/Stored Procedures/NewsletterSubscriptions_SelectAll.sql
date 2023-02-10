@@ -12,35 +12,36 @@
 
 
 ALTER PROC [dbo].[NewsletterSubscriptions_SelectAll]
-							@PageIndex int
-							,@PageSize int
+		@PageIndex int
+		,@PageSize int
 
 AS
 
 /*------------------TEST CODE--------------------
 
-			DECLARE @PageIndex int = 0
-					,@PageSize int = 7
+	DECLARE @PageIndex int = 0
+		,@PageSize int = 7
 
-			EXECUTE dbo.NewsletterSubscriptions_SelectAll
-							@PageIndex
-							,@PageSize
+	EXECUTE dbo.NewsletterSubscriptions_SelectAll
+		@PageIndex
+		,@PageSize
 
 -----------------------------------------*/
 
 BEGIN
 
-			DECLARE @offset int = @PageIndex * @PageSize
+	DECLARE @offset int = @PageIndex * @PageSize
 
-			SELECT [Id]
-					,[Email]
-					,[IsSubscribed]
-					,[DateCreated]
-					,[DateModified] 
-					,TotalCount = COUNT(1) OVER()
-			FROM [dbo].[NewsletterSubscriptions]
-			ORDER By Id
-			OFFSET @offset ROWS
-			FETCH NEXT @PageSize ROWS ONLY
+	SELECT [Id]
+		,[Email]
+		,[IsSubscribed]
+		,[DateCreated]
+		,[DateModified] 
+		,TotalCount = COUNT(1) OVER()
+	FROM [dbo].[NewsletterSubscriptions]
+	ORDER By Id
+	
+	OFFSET @offset ROWS
+	FETCH NEXT @PageSize ROWS ONLY
 
 END
