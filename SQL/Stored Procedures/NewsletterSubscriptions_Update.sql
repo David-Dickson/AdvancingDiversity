@@ -1,7 +1,7 @@
 --===========================================================================================
 -- Author: David Dickson
 -- Create date: MM/DD/YEAR
--- Description: [dbo].[NewsletterSubscriptions_Update] for dbo.NewsletterSubscriptions
+-- Description: [dbo].[NewsletterSubscriptions_Update] for [dbo.NewsletterSubscriptions]
 -- Code Reviewer: Redacted
 
 -- Modified by: author
@@ -28,8 +28,8 @@ AS
 		,@IsSubscribed
 
 	SELECT *
-	FROM [dbo].[NewsletterSubscriptions]
-	WHERE @Email = Email
+		FROM [dbo].[NewsletterSubscriptions]
+		WHERE @Email = Email
 	
 -------------------------------------*/
 
@@ -38,8 +38,11 @@ BEGIN
 	DECLARE @DateNow datetime2 = getutcdate()
 
 	UPDATE [dbo].[NewsletterSubscriptions]
-	SET	IsSubscribed = @IsSubscribed
+	
+	SET
+		IsSubscribed = @IsSubscribed
 		,DateModified = @DateNow
+		
 	WHERE @Email = Email
 			
 END
