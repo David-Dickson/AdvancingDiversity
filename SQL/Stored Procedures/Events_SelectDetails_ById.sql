@@ -11,7 +11,6 @@
 -- =============================================
 
 
-
 	ALTER PROC [dbo].[Events_SelectDetails_ById] 
   		@Id int
 					
