@@ -57,7 +57,7 @@ AS
 		,@EventTypeId int =1
 		,@Name nvarchar(255) = 'Recruting Fair'
 		,@Summary nvarchar(255)='Recruting Fair for diverse hires.'
-		,@ShortDescription nvarchar(4000) ='Recruting Fair is an event where you can find a job.'
+		,@ShortDescription nvarchar(4000) ='Recruiting Fair is an event where you can find a your next job.'
 		,@EventStatusId int = 1
 		,@ImageUrl nvarchar(400) = 'https://tinyurl.com/2ykack73'
 		,@ExternalSiteUrl nvarchar(400) ='facebook.com'
