@@ -3,7 +3,7 @@ import { useNavigate, useLocation, useParams } from 'react-router-dom';
 import { Formik, Form, Field, ErrorMessage } from 'formik';
 import { Row, Col } from 'react-bootstrap';
 import newsletterTemplatesValidationSchema from '../../schema/newsletterTemplatesValidationSchema';
-import debug from 'debugger';
+import debug from 'hidden-debug';
 import * as newsletterTemplatesService from '../../services/newsletterTemplatesService';
 import PropTypes from 'prop-types';
 import toastr from 'toastr';
