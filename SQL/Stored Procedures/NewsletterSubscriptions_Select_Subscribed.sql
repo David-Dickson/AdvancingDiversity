@@ -1,7 +1,7 @@
 --===========================================================================================
 -- Author: David Dickson
 -- Create date: MM/DD/YEAR
--- Description: [dbo].[NewsletterSubscriptions_SelectAll_Subscribed] for dbo.NewsletterSubscriptions
+-- Description: [dbo].[NewsletterSubscriptions_SelectAll_Subscribed] for [dbo.NewsletterSubscriptions]
 -- Code Reviewer: Redacted
 
 -- Modified by: author
@@ -21,7 +21,7 @@ AS
 			
 	DECLARE @IsSubscribed bit = 'True'	
 
-	EXECUTE dbo.NewsletterSubscriptions_Select_Subscribed 
+	EXECUTE [dbo].[NewsletterSubscriptions_Select_Subscribed]
 		@IsSubscribed
 
 -----------------------------------------------------------*/
@@ -34,7 +34,7 @@ BEGIN
 		,DateCreated
 		,DateModified
 					
-	FROM dbo.NewsletterSubscriptions
+	FROM [dbo].[NewsletterSubscriptions]
 	WHERE IsSubscribed = @IsSubscribed
 
 END
