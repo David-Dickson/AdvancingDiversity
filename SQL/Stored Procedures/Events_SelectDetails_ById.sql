@@ -12,27 +12,28 @@
 
 
 
-ALTER proc [dbo].[Events_SelectDetails_ById] 
-  @Id int
+	ALTER PROC [dbo].[Events_SelectDetails_ById] 
+  		@Id int
 					
 
-as
+AS
+
+
 /*
 	
-	Declare @Id int = 18
+	DECLARE @Id int = 18
 		
 
-	Execute [dbo].[Events_SelectDetails_ById] 
-  @Id
+	EXECUTE [dbo].[Events_SelectDetails_ById] 
+  		@Id
 								
 
 */
 
-Begin
+BEGIN
 
 
-
-	Select e.Id
+	SELECT e.Id
 		,e.EventTypeId
 		,et.Name as EventType
 		,e.Name
@@ -67,20 +68,20 @@ Begin
 		,e.CreatedBy
 
 		
-		From dbo.Events as e inner join dbo.EventTypes as et
-		on e.EventTypeId = et.Id
-		inner join dbo.EventStatus as es
-		on e.EventStatusId = es.Id
-		inner join dbo.Venues as v
-		on v.Id = e.VenueId
-		inner join dbo.Locations as l
-		on v.LocationId = l.Id
-		inner join dbo.LocationTypes as lt
-		on lt.Id = l.LocationTypeId
-		inner join dbo.States as s
-		on s.Id = l.StateId
+	FROM dbo.Events AS e INNER JOIN [dbo].[EventTypes] AS et
+	ON e.EventTypeId = et.Id
+		INNER JOIN [dbo].[EventStatus] AS es
+	ON e.EventStatusId = es.Id
+		INNER JOIN [dbo].[Venues] AS v
+	ON v.Id = e.VenueId
+		INNER JOIN [dbo].[Locations] AS l
+	ON v.LocationId = l.Id
+		INNER JOIN [dbo].[LocationTypes] AS lt
+	ON lt.Id = l.LocationTypeId
+		INNER JOIN [dbo].[States] AS s
+	ON s.Id = l.StateId
 
-		Where e.Id = @Id
+	WHERE e.Id = @Id
 	
 
 End
