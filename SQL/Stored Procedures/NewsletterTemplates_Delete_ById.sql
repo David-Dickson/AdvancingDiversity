@@ -18,17 +18,17 @@ AS
 
 /* --------------TEST CODE------------------
 
-DECLARE @Id int = 54
+	DECLARE @Id int = 54
 
-SELECT *
-	FROM [dbo].[NewsletterTemplates]
-	WHERE Id = @Id
+	SELECT *
+		FROM [dbo].[NewsletterTemplates]
+		WHERE Id = @Id
 
-EXECUTE [dbo].[NewsletterTemplates_Delete_ById] @Id
+	EXECUTE [dbo].[NewsletterTemplates_Delete_ById] @Id
 
-SELECT *
-	FROM [dbo].[NewsletterTemplates]
-	WHERE Id = @Id
+	SELECT *
+		FROM [dbo].[NewsletterTemplates]
+		WHERE Id = @Id
 
 -------------------------------------------*/
 
@@ -36,7 +36,7 @@ SELECT *
 BEGIN
 
 
-DELETE FROM [dbo].[NewsletterTemplates]
-      WHERE Id = @Id
+	DELETE FROM [dbo].[NewsletterTemplates]
+	      	WHERE Id = @Id
 
 END
