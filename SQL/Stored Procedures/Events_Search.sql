@@ -1,19 +1,19 @@
 -- =============================================
-    -- Author: David Dickson
-    -- Create date: 6/27/2022
-    -- Description: [Events_Search] for dbo.Events
-    -- Code Reviewer: Redacted
-    
-    -- MODIFIED BY: author
-    -- MODIFIED DATE: M/DD/YEAR
-    -- Code Reviewer:
-    -- Note:
-    -- =============================================
+-- Author: David Dickson
+-- Create date: 6/27/2022
+-- Description: [Events_Search] for dbo.Events
+-- Code Reviewer: Redacted
+
+-- MODIFIED BY: author
+-- MODIFIED DATE: M/DD/YEAR
+-- Code Reviewer:
+-- Note:
+-- =============================================
 
 	ALTER PROC [dbo].[Events_Search]
-			@PageIndex int
-			,@PageSize int
-			,@Query nvarchar(50) 
+		@PageIndex int
+		,@PageSize int
+		,@Query nvarchar(50) 
       
       
 	AS
@@ -21,19 +21,19 @@
   
 /*---------TEST CODE---------
 
-DECLARE		@Query nvarchar(50) = 'Los'
-			,@PageIndex int = 0
-			,@PageSize int = 5;
+	DECLARE	@Query nvarchar(50) = 'Los'
+		,@PageIndex int = 0
+		,@PageSize int = 5;
 
-EXECUTE [dbo].[Events_Search]
-			@PageIndex
-			,@PageSize
-			,@Query
+	EXECUTE [dbo].[Events_Search]
+		@PageIndex
+		,@PageSize
+		,@Query
 
 */---------TEST CODE---------
 
 
-	BEGIN
+BEGIN
 
 	DECLARE @offset int = @pageIndex * @pageSize
 
@@ -72,18 +72,18 @@ EXECUTE [dbo].[Events_Search]
 		,e.CreatedBy
 		,TotalCount = COUNT(1) OVER()
 		
-		From dbo.Events as e inner join dbo.EventTypes as et
-		on e.EventTypeId = et.Id
-		inner join dbo.EventStatus as es
-		on e.EventStatusId = es.Id
-		inner join dbo.Venues as v
-		on v.Id = e.VenueId
-		inner join dbo.Locations as l
-		on v.LocationId = l.Id
-		inner join dbo.LocationTypes as lt
-		on lt.Id = l.LocationTypeId
-		inner join dbo.States as s
-		on s.Id = l.StateId
+	FROM [dbo].[Events] AS e INNER JOIN [dbo].[EventTypes] AS et
+	ON e.EventTypeId = et.Id
+		INNER JOIN [dbo].[EventStatus] AS es
+	ON e.EventStatusId = es.Id
+		INNER JOIN [dbo].[Venues] as v
+	ON v.Id = e.VenueId
+		INNER JOIN [dbo].[Locations] as l
+	ON v.LocationId = l.Id
+		INNER JOIN [dbo].[LocationTypes] as lt
+	ON lt.Id = l.LocationTypeId
+		INNER JOIN [dbo].[States] as s
+	ON s.Id = l.StateId
 
 	WHERE 
 	(
@@ -102,4 +102,4 @@ EXECUTE [dbo].[Events_Search]
 		OFFSET @offSet Rows
 		Fetch Next @PageSize Rows ONLY
 
-	END
+END
