@@ -40,9 +40,11 @@ BEGIN
 		,TotalCount = COUNT(1) OVER()
 		
 	FROM [dbo].[NewsletterSubscriptions]
-	ORDER By Id
 	
-	OFFSET @offset ROWS
-	FETCH NEXT @PageSize ROWS ONLY
+		ORDER By Id
+
+		OFFSET @offset ROWS
+
+		FETCH NEXT @PageSize ROWS ONLY
 
 END
