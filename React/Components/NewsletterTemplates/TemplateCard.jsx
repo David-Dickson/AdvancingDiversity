@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Modal, Button } from 'react-bootstrap';
 import PropTypes from 'prop-types';
-import debug from 'sabio-debug';
+import debug from 'hidden-debug';
 import Swal from 'sweetalert2';
 import informationIcon from '../../assets/images/surveys/information.svg';
 import editIcon from '../../assets/images/surveys/edit.svg';
