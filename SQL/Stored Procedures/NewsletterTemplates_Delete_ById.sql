@@ -12,11 +12,11 @@
 -- =============================================
 
 ALTER PROC [dbo].[NewsletterTemplates_Delete_ById]
-	@Id int
+		@Id int
 	   
 AS
 
-/* ----TEST CODE----
+/* --------------TEST CODE------------------
 
 DECLARE @Id int = 54
 
@@ -30,7 +30,7 @@ SELECT *
 	FROM [dbo].[NewsletterTemplates]
 	WHERE Id = @Id
 
-*/
+-------------------------------------------*/
 
 
 BEGIN
