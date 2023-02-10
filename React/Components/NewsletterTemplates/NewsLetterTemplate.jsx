@@ -2,7 +2,7 @@ import React, { useState, useEffect, useCallback } from 'react';
 import { Formik, Form, Field } from 'formik';
 import TemplateCard from './TemplateCard';
 import * as newsletterTemplatesService from '../../services/newsletterTemplatesService';
-import debug from 'debugger';
+import debug from 'hidden-debug';
 import { Link } from 'react-router-dom';
 import TemplatesForm from './TemplatesForm';
 import Pagination from 'rc-pagination';
