@@ -1,11 +1,11 @@
 -- =============================================
     -- Author: David Dickson
-    -- Create date: M/DD/YEAR
+    -- Create date: MM/DD/YEAR
     -- Description: Update for the given parameters listed of Newsletters
     -- Code Reviewer: Redacted
 
     -- MODIFIED BY: Author
-    -- MODIFIED DATE: M/DD/YEAR
+    -- MODIFIED DATE: MM/DD/YEAR
     -- Code Reviewer:
     -- Note:
 -- ==============================================
@@ -32,7 +32,7 @@ AS
 		,@DateToExpire datetime2(7) = '2022-06-15'
 		,@CreatedBy int = 22
 
-	EXECUTE dbo.Newsletters_Update					 
+	EXECUTE [dbo].[Newsletters_Update]					 
 		@TemplateId
 		,@Name
 		,@CoverPhoto
@@ -42,13 +42,13 @@ AS
 		,@Id OUTPUT 
 
 	SELECT * 
-	FROM dbo.Newsletters
+		FROM [dbo].[Newsletters]
 
 	SELECT * 
-	FROM dbo.NewsletterTemplates
+		FROM [dbo].[NewsletterTemplates]
 
 	SELECT * 
-	FROM dbo.Users
+		FROM dbo.Users
 
 ------ END TEST CODE ------
 */
@@ -60,13 +60,16 @@ BEGIN
 	DECLARE @DateNow datetime2(7) = GETUTCDATE()
 
 	UPDATE [dbo].[Newsletters]
-		SET [TemplateId] = @TemplateId
+	
+	SET 	
+		[TemplateId] = @TemplateId
 		,[Name] = @Name
 		,[CoverPhoto] = @CoverPhoto
 		,[DateToPublish] = @DateToPublish
 		,[DateToExpire] = @DateToExpire
 		,[CreatedBy] = @CreatedBy
 		,[DateModified] = @DateNow
+		
 	 WHERE Id = @Id 
 
 
