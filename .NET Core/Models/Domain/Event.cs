@@ -8,32 +8,32 @@ using System.Threading.Tasks;
 namespace Hidden.Models.Domain.Event
 {
     public class Event
-    {
-     public int Id { get; set; }
-   
-      public LookUp EventTypes { get; set; }
+        {
+            public int Id { get; set; }
 
-      public string EventName { get; set; }
+            public LookUp EventTypes { get; set; }
 
-      public string Summary { get; set; }
+            public string EventName { get; set; }
 
-      public string ShortDescription { get; set; }
+            public string Summary { get; set; }
 
-      public VenueBase Venue { get; set; }
+            public string ShortDescription { get; set; }
 
-      public LookUp EventStatus { get; set; }
+            public VenueBase Venue { get; set; }
 
-      public string ImageUrl { get; set; }
+            public LookUp EventStatus { get; set; }
 
-      public string ExternalSiteUrl { get; set; }
+            public string ImageUrl { get; set; }
 
-      public bool IsFree { get; set; }
+            public string ExternalSiteUrl { get; set; }
 
-      public DateTime DateStart { get; set; }
+            public bool IsFree { get; set; }
 
-      public DateTime DateEnd { get; set; }
+            public DateTime DateStart { get; set; }
 
-      public int CreatedBy { get; set; }
+            public DateTime DateEnd { get; set; }
 
-    }
+            public int CreatedBy { get; set; }
+
+        }
 }
