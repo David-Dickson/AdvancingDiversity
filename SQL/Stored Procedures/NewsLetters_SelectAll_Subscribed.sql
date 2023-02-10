@@ -38,7 +38,7 @@ BEGIN
 	  	,DateModified
 
 	FROM dbo.NewsletterSubscriptions
-	WHERE IsSubscribed = 1
+		WHERE IsSubscribed = 1
 
 	ORDER BY Id
 	
