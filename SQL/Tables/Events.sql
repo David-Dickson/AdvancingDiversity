@@ -33,18 +33,13 @@ ALTER TABLE [dbo].[Events]  WITH CHECK ADD  CONSTRAINT [FK_Events_EventTypes] FO
 REFERENCES [dbo].[EventTypes] ([Id])
 
 ALTER TABLE [dbo].[Events] CHECK CONSTRAINT [FK_Events_EventTypes]
-GO
 
 ALTER TABLE [dbo].[Events]  WITH CHECK ADD  CONSTRAINT [FK_Events_Users] FOREIGN KEY([CreatedBy])
 REFERENCES [dbo].[Users] ([Id])
-GO
 
 ALTER TABLE [dbo].[Events] CHECK CONSTRAINT [FK_Events_Users]
-GO
 
 ALTER TABLE [dbo].[Events]  WITH CHECK ADD  CONSTRAINT [FK_Events_Venues] FOREIGN KEY([VenueId])
 REFERENCES [dbo].[Venues] ([Id])
-GO
 
 ALTER TABLE [dbo].[Events] CHECK CONSTRAINT [FK_Events_Venues]
-GO
