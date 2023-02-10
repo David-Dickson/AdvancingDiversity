@@ -1,7 +1,7 @@
 -- =============================================
     -- Author: David Dickson
     -- Create date: MM/DD/YEAR
-    -- Description: Delete for dbo.Newsletter_Delete_By_Id given the Id of Newsletters
+    -- Description: Delete for [dbo].[Newsletter_Delete_By_Id] given the Id of Newsletters
     -- Code Reviewer: Redacted 
 
     -- MODIFIED BY: Author
@@ -17,16 +17,18 @@ ALTER PROC [dbo].[NewsLetters_SelectAll_Subscribed]
 						
 AS
 
+
 /*-----------------TEST CODE-------------------
 
 	DECLARE @PageIndex int = 0
 		,@PageSize int = 3
 
-	EXECUTE dbo.Newsletters_SelectAll 
+	EXECUTE [dbo].[Newsletters_SelectAll] 
 		@PageIndex
 		,@PageSize
 
-------------------------------------*/
+-----------------------------------------------*/
+
 
 BEGIN
 
@@ -37,7 +39,7 @@ BEGIN
 	  	,DateCreated
 	  	,DateModified
 
-	FROM dbo.NewsletterSubscriptions
+	FROM [dbo].[NewsletterSubscriptions]
 		WHERE IsSubscribed = 1
 
 	ORDER BY Id
