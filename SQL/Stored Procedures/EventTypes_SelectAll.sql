@@ -11,26 +11,27 @@
 -- =============================================
     
     
-ALTER proc [dbo].[EventTypes_SelectAll]
+ALTER 	PROC [dbo].[EventTypes_SelectAll]
 
 
 AS
 
+
 /* -----TEST CODE-----
 
 
-Execute [dbo].[EventTypes_SelectAll]
+	EXECUTE [dbo].[EventTypes_SelectAll]
 					
 
-*/-----END TEST CODE-----
+*/ -----END TEST CODE-----
+
 
 BEGIN
 	
-		SELECT [Id]
-			  ,[Name]
-		  FROM [dbo].[EventTypes]
-
-
+	SELECT [Id]
+		,[Name]
+		
+	FROM [dbo].[EventTypes]
 
 
 END
