@@ -21,12 +21,10 @@ AS
 
 	EXECUTE [Newsletters_Delete_By_Id] @Id 
 
-	SELECT * FROM dbo.Newsletters
+	SELECT * FROM [dbo].[Newsletters]
 
 ---------END TEST CODE---------
 */
-
-
 
 
 BEGIN
