@@ -13,28 +13,28 @@
 
 
 ALTER PROC [dbo].[NewsletterSubscriptions_Select_Subscribed]
-                  @IsSubscribed bit
+		@IsSubscribed bit
 
 AS
 
 /*-----------TEST CODE---------------------------------------
 			
-			DECLARE @IsSubscribed bit = 'True'	
+	DECLARE @IsSubscribed bit = 'True'	
 
-			EXECUTE dbo.NewsletterSubscriptions_Select_Subscribed 
-									@IsSubscribed
+	EXECUTE dbo.NewsletterSubscriptions_Select_Subscribed 
+		@IsSubscribed
 
 -----------------------------------------------------------*/
 
 BEGIN
 
-			SELECT Id
-                  ,Email
-                  ,IsSubscribed
-                  ,DateCreated
-                  ,DateModified
+	SELECT Id
+		,Email
+		,IsSubscribed
+		,DateCreated
+		,DateModified
 					
-			FROM dbo.NewsletterSubscriptions
-			WHERE IsSubscribed = @IsSubscribed
+	FROM dbo.NewsletterSubscriptions
+	WHERE IsSubscribed = @IsSubscribed
 
 END
