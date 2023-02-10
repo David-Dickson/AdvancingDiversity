@@ -44,12 +44,15 @@ BEGIN
 		,[DateCreated]
 		,[DateModified]
 		,TotalCount = COUNT(1) OVER()
+		
 	FROM [dbo].[NewsletterSubscriptions]
 	
-	WHERE (Email LIKE '%' + @Query + '%')
-	ORDER BY Id
-	
-	OFFSET @offset ROWS
-	FETCH NEXT @PageSize ROWS ONLY
+		WHERE (Email LIKE '%' + @Query + '%')
+
+		ORDER BY Id
+
+		OFFSET @offset ROWS
+
+		FETCH NEXT @PageSize ROWS ONLY
 
 END
