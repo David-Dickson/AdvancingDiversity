@@ -1,11 +1,11 @@
 -- =============================================
     -- Author: David Dickson
-    -- Create date: M/DD/YEAR
+    -- Create date: MM/DD/YEAR
     -- Description: SelectAll Pagination for the given PageIndex and PageSized of Newsletters
     -- Code Reviewer: Redacted
 
     -- MODIFIED BY: Author
-    -- MODIFIED DATE: M/DD/YEAR
+    -- MODIFIED DATE: MM/DD/YEAR
     -- Code Reviewer:
     -- Note:
 -- ==============================================
@@ -23,18 +23,18 @@ AS
 	DECLARE @PageIndex int = 0
 		,@PageSize int = 10
 
-	EXECUTE dbo.Newsletters_SelectAll
+	EXECUTE [dbo].[Newsletters_SelectAll]
 		@PageIndex
 		,@PageSize
 
         SELECT * 
-		FROM dbo.Newsletters
+		FROM [dbo].[Newsletters]
 			
 	SELECT * 
-		FROM dbo.NewsletterTemplates
+		FROM [dbo].[NewsletterTemplates]
 
 	SELECT * 
-		FROM dbo.Users
+		FROM [dbo].[Users]
 
 
 ------ END  TEST CODE -------
@@ -42,6 +42,7 @@ AS
 
 
 BEGIN
+
 
 	DECLARE @offset int = @PageIndex * @PageSize
 		
@@ -56,7 +57,7 @@ BEGIN
 		  ,[DateModified]
 		  ,CreatedBy
 		  ,TotalCount = COUNT(1) OVER()
-	FROM dbo.Newsletters
+	FROM [db]o.[Newsletters]
 
 		  ORDER BY Id DESC
 		  OFFSET @offset ROWS
