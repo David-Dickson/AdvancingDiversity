@@ -54,8 +54,6 @@ namespace Hidden.Web.StartUp
 
             services.AddSingleton<IJobAdminService, JobAdminService>();
 
-            services.AddSingleton<IJobFairService, JobFairService>();
-
             services.AddSingleton<IJobPublicService, JobPublicService>();
             
             services.AddSingleton<IJobTypeService, JobTypeService>();
